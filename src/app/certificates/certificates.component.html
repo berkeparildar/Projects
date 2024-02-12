@@ -1,0 +1,12 @@
+<div class="container">
+	<h1>Certificates</h1>
+	<div class="project-grid">
+		<div class="row">
+			<div class="col-md-6 col-lg-6 d-flex justify-content-center" *ngFor="let certificate of certificates">
+				<app-certificate-tile [name]="certificate.name" [imagePath]="certificate.imagePath"
+					[url]="certificate.url">
+				</app-certificate-tile>
+			</div>
+		</div>
+	</div>
+</div>

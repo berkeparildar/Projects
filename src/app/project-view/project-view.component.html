@@ -1,0 +1,63 @@
+<div class="modal-container">
+    <div class="modal-content">
+      <h1 class="project-title title">
+        {{ projectTitle }}
+        <a *ngIf="!hasVideo" href="{{ repoLink }}" target="_blank">
+          <img src="assets/gh.png" alt="GitHub" class="noStore">
+        </a>
+      </h1>
+        <div style="padding-top: 20px;" class="grid-layout">
+          <div *ngIf="hasVideo" class="grid-row">
+            <div class="text-part">
+              <div>
+                <div class="plyr__video-embed" id="player">
+                  <iframe [src]="safeURL" allowfullscreen allowtransparency allow="autoplay"></iframe>
+                </div>
+              </div>
+            </div>
+            <div class="image-part">
+              <div class="github-icons">
+                <a class="github-icon left" href="{{ repoLink }}" target="_blank">
+                  <img src="assets/gh.png" alt="" class="icon">
+                </a>
+                <a *ngIf="hasStore" class="github-icon right" href="{{ storeUrl }}" target="_blank">
+                  <img src="assets/gp.png" alt="" class="icon">
+                </a>
+              </div>
+            </div>
+          </div>
+            <div class="grid-row">
+                <div class="text-part">
+                    <h3 class="headings">Description</h3>
+                    <p>{{ projectDescription }}</p>
+                </div>
+                <div class="image-part">
+                    <img [src]="imageOnePath" alt="Description Image"/>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="image-part">
+                    <img [src]="imageTwoPath" alt="Features Image"/>
+                </div>
+                <div class="text-part">
+                    <h3 class="headings">{{partOneTitle}}</h3>
+                    <ul>
+                        <li *ngFor="let feature of partOneList">{{ feature }}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid-row">
+                <div class="text-part">
+                    <h3 class="headings">{{partTwoTitle}}</h3>
+                    <ul>
+                        <li *ngFor="let step of partTwoList">{{ step }}</li>
+                    </ul>
+                </div>
+                <div class="image-part">
+                    <img [src]="imageThreePath" alt="How to Play Image"/>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

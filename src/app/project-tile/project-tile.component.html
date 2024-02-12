@@ -1,0 +1,9 @@
+<div class="project-tile clickable-cursor" (click)="openProjectView()">
+  <div class="title">{{ title }}</div>
+  <img [src]="imageUrl" alt="Game Image" />
+  <div class="tags">
+    <span *ngFor="let tag of tags" [ngClass]="'tag-' + CoreTag(tag)" class="tag">
+      {{Tag(tag)}}
+    </span>
+  </div>
+</div>
